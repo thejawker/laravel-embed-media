@@ -1,0 +1,53 @@
+{
+    "name": "thejawker/laravel-embed-media",
+    "description": "associate embeddable content with a Laravel Model.",
+    "keywords": [
+        "thejawker",
+        "laravel-embed-media"
+    ],
+    "homepage": "https://github.com/thejawker/laravel-embed-media",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bram Veerman",
+            "email": "info@thejawker.com",
+            "homepage": "https://thejawker.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thejawker\\Skeleton\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thejawker\\Skeleton\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thejawker\\Skeleton\\SkeletonServiceProvider"
+            ],
+            "aliases": {
+                "Skeleton": "Thejawker\\Skeleton\\SkeletonFacade"
+            }
+        }
+    }
+}
