@@ -14,6 +14,8 @@ class EmbedMediaServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/embed-media.php.php' => config_path('embed-media.php'),
         ], 'config');
+
+        $this->loadMigrationsFrom(__DIR__ . '/../database');
     }
 
     /**
