@@ -3,7 +3,7 @@
 namespace TheJawker\LaravelEmbedMedia\Tests\Integration;
 
 use TheJawker\LaravelEmbedMedia\EmbeddableMedia;
-use TheJawker\LaravelEmbedMedia\MediaProviders\VimeoProvider;
+use TheJawker\LaravelEmbedMedia\MediaProviders\VimeoMediaProvider;
 use TheJawker\LaravelEmbedMedia\MediaResolver;
 
 /** @group external */
@@ -12,7 +12,7 @@ class VimeoTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        MediaResolver::register(new VimeoProvider);
+        MediaResolver::register(new VimeoMediaProvider);
     }
 
     /** @test */

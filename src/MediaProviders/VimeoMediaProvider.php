@@ -4,7 +4,7 @@ namespace TheJawker\LaravelEmbedMedia\MediaProviders;
 
 use Zttp\Zttp;
 
-class VimeoProvider extends BaseMediaProvider
+class VimeoMediaProvider extends BaseMediaProvider
 {
     const OEMBED_URL = 'https://vimeo.com/api/oembed.json?url=%s';
 
