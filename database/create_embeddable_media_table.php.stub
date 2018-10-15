@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateEmbeddableMediaTables extends Migration
+{
+    public function up()
+    {
+        Schema::create('embeddable_media', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('service_accessor');
+            $table->string('media_id');
+
+            $table->integer('embeddable_id')->unsigned();
+            $table->string('embeddable_type');
+
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::drop('embeddable_media');
+    }
+}
