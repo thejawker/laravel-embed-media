@@ -49,11 +49,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Thejawker\\Skeleton\\SkeletonServiceProvider"
-      ],
-      "aliases": {
-        "Skeleton": "Thejawker\\Skeleton\\SkeletonFacade"
-      }
+        "Thejawker\\LaravelEmbedMedia\\EmbedMediaServiceProvider"
+      ]
     }
   }
 }
