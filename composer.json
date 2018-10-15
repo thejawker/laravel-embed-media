@@ -49,7 +49,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Thejawker\\LaravelEmbedMedia\\EmbedMediaServiceProvider"
+        "TheJawker\\LaravelEmbedMedia\\EmbedMediaServiceProvider"
       ]
     }
   }
