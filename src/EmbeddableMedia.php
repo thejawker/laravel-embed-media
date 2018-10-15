@@ -7,6 +7,8 @@ use TheJawker\LaravelEmbedMedia\MediaProviders\MediaProviderContract;
 
 class EmbeddableMedia extends Model
 {
+    protected $guarded = [];
+
     public function provider(): MediaProviderContract
     {
         $provider = MediaResolver::resolve($this->service_accessor);
