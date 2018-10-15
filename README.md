@@ -44,4 +44,4 @@ If you discover any security related issues, please email info@thejawker.com ins
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-> Used the [Thejawker Skeleton Package](https://github.com/thejawker/skeleton-php) as starting point.
+> Used the [Spatie Skeleton Package](https://github.com/spatie/skeleton-php) as starting point.
