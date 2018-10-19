@@ -21,12 +21,17 @@ class ProviderTest extends TestCase
     }
     
     /** @test */
-    public function cant_register_two_providers_with_the_same_service_identifier()
+    public function registering_a_provider_twice_will_update_it()
     {
-        $this->expectException(ClashingServiceIdentifierException::class);
+        $providerA = new ExampleMediaProvider('duplicate');
+        $providerB = new ExampleMediaProvider('duplicate');
 
-        MediaResolver::register(new ExampleMediaProvider('duplicate'));
-        MediaResolver::register(new ExampleMediaProvider('duplicate'));
+        MediaResolver::register($providerA);
+        MediaResolver::register($providerB);
+
+        $resolvedProvider = MediaResolver::resolve('duplicate');
+
+        $this->assertTrue(spl_object_hash($resolvedProvider) === spl_object_hash($providerB));
     }
 
     /** @test */

@@ -21,10 +21,6 @@ class MediaResolver
 
     public static function register(MediaProviderContract $provider)
     {
-        if (self::isRegistered($provider)) {
-            throw new ClashingServiceIdentifierException();
-        }
-
         self::instance()->providers[$provider->getServiceAccessor()] = $provider;
     }
 
