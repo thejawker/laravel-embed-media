@@ -13,11 +13,15 @@ class EmbedMediaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (! class_exists('CreateEmbeddableMediaTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_embeddable_media_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_embeddable_media_table.php'),
+            ], 'migrations');
+        }
+
         $this->publishes([
             __DIR__ . '/../config/embed-media.php' => config_path('embed-media.php'),
         ], 'config');
-
-        $this->loadMigrationsFrom(__DIR__ . '/../database');
 
         $this->loadMediaProviders();
     }

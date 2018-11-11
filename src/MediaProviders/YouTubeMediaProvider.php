@@ -7,6 +7,7 @@ use Madcoda\Youtube\Youtube;
 class YouTubeMediaProvider extends BaseMediaProvider
 {
     protected $client;
+    protected $video;
 
     public function __construct()
     {
@@ -31,11 +32,20 @@ class YouTubeMediaProvider extends BaseMediaProvider
 
     private function video()
     {
-        return $this->client->getVideoInfo($this->getMediaId());
+        if (!$this->video) {
+            $this->video = $this->client->getVideoInfo($this->getMediaId());
+        }
+
+        return $this->video;
     }
 
     public function getRawData(): array
     {
         return json_decode(json_encode($this->video()), true);
+    }
+
+    public function getThumbnailUrl(): ?string
+    {
+        return array_get($this->getRawData(), 'snippet.thumbnails.maxres.url');
     }
 }

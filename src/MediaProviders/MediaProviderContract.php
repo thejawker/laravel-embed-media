@@ -9,4 +9,5 @@ interface MediaProviderContract
     public function setMediaId(string $id);
     public function getMediaId(): string;
     public function getRawData(): array;
+    public function getThumbnailUrl(): ?string;
 }
