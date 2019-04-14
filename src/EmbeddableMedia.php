@@ -10,13 +10,16 @@ class EmbeddableMedia extends Model
     protected $guarded = [];
 
     protected $appends = ['raw_data', 'html', 'thumbnail'];
+    protected $provider;
 
     public function provider(): MediaProviderContract
     {
-        $provider = MediaResolver::resolve($this->service_accessor);
-        $provider->setMediaId($this->media_id);
+        if (!$this->provider) {
+            $this->provider = MediaResolver::resolve($this->service_accessor);
+            $this->provider->setMediaId($this->media_id);
+        }
 
-        return $provider;
+        return $this->provider;
     }
 
     public function getProviderAttribute()

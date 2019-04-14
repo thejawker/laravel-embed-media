@@ -32,7 +32,7 @@ class YouTubeMediaProvider extends BaseMediaProvider
 
     private function video()
     {
-        if (!$this->video) {
+        if (!$this->video || $this->video->id !== $this->media_id) {
             $this->video = $this->client->getVideoInfo($this->getMediaId());
         }
 
