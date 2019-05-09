@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/thejawker/laravel-embed-media.svg?style=flat-square)](https://packagist.org/packages/thejawker/laravel-embed-media)
 
 Makes it easy to associate a Embeddable Media with a Model in your application. 
-We try to support the most popular ones like YouTube/SoundCloud/Vimeo, but have a plugin system that allows you to write your own implementations.  
+We try to support the most popular ones like YouTube/SoundCloud/Vimeo/Spotify, but have a plugin system that allows you to write your own implementations very easily.  
 
 ## Installation
 
