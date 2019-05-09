@@ -3,6 +3,7 @@
 namespace TheJawker\LaravelEmbedMedia;
 
 use Illuminate\Support\ServiceProvider;
+use TheJawker\LaravelEmbedMedia\MediaProviders\SoundCloudMediaProvider;
 use TheJawker\LaravelEmbedMedia\MediaProviders\SpotifyMediaProvider;
 use TheJawker\LaravelEmbedMedia\MediaProviders\TestMediaProvider;
 use TheJawker\LaravelEmbedMedia\MediaProviders\VimeoMediaProvider;
@@ -42,5 +43,6 @@ class EmbedMediaServiceProvider extends ServiceProvider
         MediaResolver::register(new VimeoMediaProvider);
         MediaResolver::register(new TestMediaProvider);
         MediaResolver::register(new SpotifyMediaProvider);
+        MediaResolver::register(new SoundCloudMediaProvider);
     }
 }
