@@ -27,7 +27,10 @@ class YouTubeMediaProvider extends BaseMediaProvider
 
     public function getHtml(): string
     {
-        return $this->video()->player->embedHtml;
+        if (property_exists($this->video(), 'player')) {
+            return $this->video()->player->embedHtml;
+        }
+        return '<div>Video unavailable</div>';
     }
 
     private function video()
